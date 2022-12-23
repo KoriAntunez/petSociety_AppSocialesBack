@@ -3,28 +3,30 @@ const bcrypt = require('bcryptjs');
 
 const { Schema } = mongoose;
 
-const TutorSchema = new Schema({
+const PetSchema = new Schema({
     name: { 
         type: String, 
         required: true 
     },
-    surname: { 
-        type: String, 
-        required: true 
-    },
-    document: {
+    type: {
         type: String
     },
-    image: {
+    specie: {
         type: String
     },
-    country: {
+    sex: {
+        type: String
+    },
+    birthday: {
         type: String
     },
     city: {
         type: String
     },
     biography: {
+        type: String
+    },
+    image: {
         type: String
     },
     network: {
@@ -40,16 +42,13 @@ const TutorSchema = new Schema({
         website2: { 
             type: String 
         },
-        linkedin: { 
-            type: String 
-        },
         facebook: { 
             type: String 
         },
-        youtube: { 
+        instagram: { 
             type: String 
         },
-        github: { 
+        youtube: { 
             type: String 
         }
     },
@@ -63,4 +62,4 @@ const TutorSchema = new Schema({
     versionKey: false
 });
 
-module.exports = mongoose.model('Tutor', TutorSchema);
+module.exports = mongoose.model('Pet', PetSchema);
